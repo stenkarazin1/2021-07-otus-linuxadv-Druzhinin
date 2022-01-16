@@ -1,0 +1,15 @@
+---
+# tasks file for mysql-prepare
+- name: Create wp db
+  mysql_db:
+    name: wp
+    state: present
+  tags: mysql-prep
+
+- name: Create wp user
+  mysql_user:
+    name: wpuser
+    password: '{{ wp_password }}'
+    priv: 'wp.*:ALL'
+    state: present
+  tags: mysql-prep

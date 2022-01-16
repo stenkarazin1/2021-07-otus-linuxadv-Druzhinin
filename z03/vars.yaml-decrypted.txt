@@ -1,0 +1,5 @@
+mysql_root_username: root
+mysql_root_password: root
+wp_password: 12345
+nginx_host: site.loc 
+

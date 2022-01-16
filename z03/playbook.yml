@@ -1,0 +1,16 @@
+---
+- name: Apply configuration to all nodes
+  hosts: all
+  user: vagrant
+  become: true
+  vars_files:
+    - vars.yaml
+  roles:
+    - role: ansible-keepalived
+    - role: common
+    - role: nginx
+    - role: geerlingguy.mysql
+    - role: mysql-prepare
+    - role: wp
+    - role: php
+
