@@ -1,0 +1,5 @@
+# Local .vagrant directories
+**/.vagrant/*
+
+# Log files
+*.log

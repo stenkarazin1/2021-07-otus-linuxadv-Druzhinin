@@ -1,0 +1,24 @@
+---
+# tasks file for wp
+- name: Create tmp dir
+  file:
+    path: /home/vagrant/tmp
+    state: directory
+    owner: vagrant
+    group: vagrant
+    mode: '666'
+
+- name: Download wp dist
+  get_url:
+    url: https://wordpress.org/latest.zip
+    dest: /home/vagrant/tmp/latest.zip
+
+- name: Unarchive wp
+  unarchive:
+    src: https://wordpress.org/latest.zip
+    dest: /var/www/html/
+    remote_src: yes
+    owner: www-data
+    group: www-data
+    mode: '775'
+
